@@ -5,6 +5,16 @@
   var TEXTOS = window.TEXTOS || {};
   var atual = 'pt';
 
+  /* As páginas de região trazem um dicionário próprio em
+     window.TEXTOS_PAGINA. Ele se junta ao geral, sem sobrescrevê-lo. */
+  if (window.TEXTOS_PAGINA) {
+    ['pt', 'en'].forEach(function (lang) {
+      var extra = window.TEXTOS_PAGINA[lang];
+      if (!extra || !TEXTOS[lang]) return;
+      Object.keys(extra).forEach(function (k) { TEXTOS[lang][k] = extra[k] });
+    });
+  }
+
   /* ─────────── idioma ─────────── */
 
   function guardar (lang) {
@@ -80,6 +90,39 @@
     document.addEventListener('click', function (e) {
       if (!menu.contains(e.target) && !botao.contains(e.target)) fecharMenu();
     });
+  }
+
+  /* ─────────── mega-menu "Onde atendemos" ─────────── */
+
+  var abreMega = document.querySelector('.abre-mega');
+  var mega = document.getElementById('mega');
+
+  function fecharMega () {
+    if (!mega) return;
+    mega.hidden = true;
+    if (abreMega) abreMega.setAttribute('aria-expanded', 'false');
+  }
+
+  if (abreMega && mega) {
+    abreMega.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var abrindo = mega.hidden;
+      mega.hidden = !abrindo;
+      abreMega.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+    mega.addEventListener('click', function (e) { e.stopPropagation() });
+    document.addEventListener('click', fecharMega);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { fecharMega(); if (abreMega) abreMega.focus() }
+    });
+    // no desktop, abrir ao passar o mouse é mais rápido que clicar
+    var pai = abreMega.parentElement;
+    if (window.matchMedia('(min-width:821px)').matches) {
+      pai.addEventListener('mouseenter', function () {
+        mega.hidden = false; abreMega.setAttribute('aria-expanded', 'true');
+      });
+      pai.addEventListener('mouseleave', fecharMega);
+    }
   }
 
   /* ─────────── formulário → WhatsApp ─────────── */

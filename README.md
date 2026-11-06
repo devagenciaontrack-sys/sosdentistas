@@ -8,13 +8,45 @@ Feito pela **On Track Agência Digital**.
 ## Arquivos
 
 ```
-index.html          página única
-css/estilo.css      estilos
-js/idiomas.js       dicionário PT/EN
-js/app.js           idioma, menu, formulário
-assets/             logo, selo 24h, foto e imagem de compartilhamento
-.nojekyll           necessário no GitHub Pages
+index.html             home
+locais/index.html      índice "Onde atendemos"
+locais/<bairro>/        21 páginas de região (geradas)
+css/estilo.css         estilos
+js/idiomas.js          dicionário PT/EN compartilhado
+js/app.js              idioma, menu, mega-menu, formulário
+assets/                logo, selo 24h, foto e imagem de compartilhamento
+tools/locais.json      dados das regiões e da clínica
+tools/gera-locais.cjs  gerador das páginas e do menu
+sitemap.xml            gerado junto
+.nojekyll              necessário no GitHub Pages
 ```
+
+## Páginas de região
+
+O site antigo tinha um menu suspenso com cerca de 30 itens numa lista
+única, com repetições — "Dentista 24 horas Zona Sul" aparecia três vezes,
+"Zona Leste" outras três. Aqui isso virou:
+
+- um **mega-menu em três colunas** (Zona Sul, Zona Leste, Outras regiões);
+- uma **página índice** em `/locais/`;
+- **uma página por região**, 21 no total, cada uma com título, descrição,
+  canonical e schema `Dentist` com `areaServed` próprios.
+
+Cada página de região traz um botão que traça a rota no Google Maps **da
+região até a clínica**, a lista "antes de sair de casa" e links para as
+regiões vizinhas.
+
+### Como mexer nas regiões
+
+Edite `tools/locais.json` e rode da raiz do projeto:
+
+```
+node tools/gera-locais.cjs
+```
+
+Isso regrava as 22 páginas, injeta o menu na home entre os marcadores
+`<!-- MENU:INICIO -->` e `<!-- MENU:FIM -->`, e refaz o `sitemap.xml`.
+**Não edite o menu da home à mão** — ele é sobrescrito.
 
 ## Identidade
 
@@ -94,8 +126,11 @@ Sem isso, quem já visitou continua vendo a versão antiga em cache.
 
 ## Verificações feitas
 
-- Sem rolagem horizontal em 57 larguras, de 320px a 1440px
+- Sem rolagem horizontal em 57 larguras, de 320px a 1440px — testado na
+  home, no índice de regiões e numa página de região
 - Sem erro no console
-- Troca PT/EN cobre as 70 chaves nos dois idiomas
+- Troca PT/EN cobre todas as chaves nos dois idiomas
 - Todas as imagens carregam
 - Mapa do Google carrega e aponta para o endereço certo
+- As 22 páginas têm title e canonical únicos, h1 e dicionário próprios
+- Os 22 links do mega-menu respondem (nenhum 404)

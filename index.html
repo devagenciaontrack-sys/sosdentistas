@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/estilo.css?v=1">
+<link rel="stylesheet" href="css/estilo.css?v=2">
 
 <script type="application/ld+json">
 {
@@ -69,13 +69,65 @@
       <img src="assets/logo-sos.png" alt="SOS Dentistas" width="190" height="59">
     </a>
 
+    <!-- MENU:INICIO -->
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#urgencia" data-i18n="navUrgencia">Urgência</a>
       <a href="#especialidades" data-i18n="navEspecialidades">Especialidades</a>
       <a href="#convenios" data-i18n="navConvenios">Convênios</a>
-      <a href="#local" data-i18n="navLocal">Como chegar</a>
+
+      <div class="tem-mega">
+        <button type="button" class="abre-mega" aria-expanded="false" aria-controls="mega">
+          <span data-i18n="navOnde">Onde atendemos</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="mega" id="mega" hidden>
+          <div class="mega-grade">
+          <div class="mega-col">
+            <p class="mega-tit" data-i18n="grupo_sul">Zona Sul</p>
+            <ul>
+              <li><a href="locais/planalto-paulista/">Planalto Paulista</a></li>
+              <li><a href="locais/avenida-indianopolis/">Avenida Indianópolis</a></li>
+              <li><a href="locais/moema/">Moema</a></li>
+              <li><a href="locais/ibirapuera/">Ibirapuera</a></li>
+              <li><a href="locais/vila-mariana/">Vila Mariana</a></li>
+              <li><a href="locais/saude/">Saúde</a></li>
+              <li><a href="locais/jabaquara/">Jabaquara</a></li>
+              <li><a href="locais/campo-belo/">Campo Belo</a></li>
+              <li><a href="locais/brooklin/">Brooklin</a></li>
+              <li><a href="locais/santo-amaro/">Santo Amaro</a></li>
+              <li><a href="locais/vila-nova-conceicao/">Vila Nova Conceição</a></li>
+              <li><a href="locais/congonhas/">Congonhas</a></li>
+              <li><a href="locais/sao-judas/">São Judas</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <p class="mega-tit" data-i18n="grupo_leste">Zona Leste</p>
+            <ul>
+              <li><a href="locais/mooca/">Mooca</a></li>
+              <li><a href="locais/tatuape/">Tatuapé</a></li>
+              <li><a href="locais/praca-silvio-romero/">Praça Silvio Romero</a></li>
+              <li><a href="locais/analia-franco/">Anália Franco</a></li>
+              <li><a href="locais/penha/">Penha</a></li>
+              <li><a href="locais/itaquera/">Itaquera</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <p class="mega-tit" data-i18n="grupo_outras">Outras regiões</p>
+            <ul>
+              <li><a href="locais/avenida-paulista/">Avenida Paulista</a></li>
+              <li><a href="locais/ipiranga/">Ipiranga</a></li>
+            </ul>
+          </div>
+          </div>
+          <a class="mega-pe" href="locais/">
+            <span data-i18n="verTodas">Ver todas as regiões</span> →
+          </a>
+        </div>
+      </div>
+
       <a href="#contato" data-i18n="navContato">Contato</a>
     </nav>
+    <!-- MENU:FIM -->
 
     <div class="acoes">
       <div class="idioma" role="group" aria-label="Idioma / Language">
@@ -308,7 +360,7 @@
   <a class="btn btn-zap" href="https://wa.me/5511945825999?text=Ol%C3%A1%2C%20preciso%20de%20atendimento%20odontol%C3%B3gico%20de%20urg%C3%AAncia." target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
-<script src="js/idiomas.js?v=1"></script>
-<script src="js/app.js?v=1"></script>
+<script src="js/idiomas.js?v=2"></script>
+<script src="js/app.js?v=2"></script>
 </body>
 </html>

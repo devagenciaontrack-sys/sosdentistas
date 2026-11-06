@@ -1,0 +1,45 @@
+{
+  "clinica": {
+    "endereco": "Av. Indianópolis, 1838",
+    "bairro": "Planalto Paulista",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "telefone": "(11) 5587-4809",
+    "telefoneLimpo": "+551155874809",
+    "telefone2": "(11) 5585-3497",
+    "telefone2Limpo": "+551155853497",
+    "whatsapp": "5511945825999"
+  },
+
+  "grupos": [
+    { "id": "sul",    "pt": "Zona Sul",        "en": "South Side" },
+    { "id": "leste",  "pt": "Zona Leste",      "en": "East Side" },
+    { "id": "outras", "pt": "Outras regiões",  "en": "Other areas" }
+  ],
+
+  "locais": [
+    { "slug": "planalto-paulista",   "nome": "Planalto Paulista",       "grupo": "sul",    "sede": true },
+    { "slug": "avenida-indianopolis","nome": "Avenida Indianópolis",    "grupo": "sul",    "sede": true },
+    { "slug": "moema",               "nome": "Moema",                   "grupo": "sul" },
+    { "slug": "ibirapuera",          "nome": "Ibirapuera",              "grupo": "sul" },
+    { "slug": "vila-mariana",        "nome": "Vila Mariana",            "grupo": "sul" },
+    { "slug": "saude",               "nome": "Saúde",                   "grupo": "sul" },
+    { "slug": "jabaquara",           "nome": "Jabaquara",               "grupo": "sul" },
+    { "slug": "campo-belo",          "nome": "Campo Belo",              "grupo": "sul" },
+    { "slug": "brooklin",            "nome": "Brooklin",                "grupo": "sul" },
+    { "slug": "santo-amaro",         "nome": "Santo Amaro",             "grupo": "sul" },
+    { "slug": "vila-nova-conceicao", "nome": "Vila Nova Conceição",     "grupo": "sul" },
+    { "slug": "congonhas",           "nome": "Aeroporto de Congonhas",  "grupo": "sul", "curto": "Congonhas" },
+    { "slug": "sao-judas",           "nome": "São Judas",               "grupo": "sul" },
+
+    { "slug": "mooca",               "nome": "Mooca",                   "grupo": "leste" },
+    { "slug": "tatuape",             "nome": "Tatuapé",                 "grupo": "leste" },
+    { "slug": "praca-silvio-romero", "nome": "Praça Silvio Romero",     "grupo": "leste" },
+    { "slug": "analia-franco",       "nome": "Anália Franco",           "grupo": "leste" },
+    { "slug": "penha",               "nome": "Penha",                   "grupo": "leste" },
+    { "slug": "itaquera",            "nome": "Itaquera",                "grupo": "leste" },
+
+    { "slug": "avenida-paulista",    "nome": "Avenida Paulista",        "grupo": "outras" },
+    { "slug": "ipiranga",            "nome": "Ipiranga",                "grupo": "outras" }
+  ]
+}
